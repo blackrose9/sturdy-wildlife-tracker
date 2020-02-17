@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Wildlife Tracker{{/block}}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+{{#block "active"}}
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="/">Home</a></li>
+        <li role="presentation"><a href="/record-sighting">Record Sighting</a></li>
+        <li role="presentation"><a href="/view_sightings">View Sightings</a></li>
+    </ul>
+{{/block}}
+<div class="container">
+    {{#block "content"}}
+    {{/block}}
+</div>
+{{#block "footer"}}
+    </body>
+    </html>
+{{/block}}

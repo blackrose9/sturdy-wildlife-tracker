@@ -1,0 +1,42 @@
+{{#partial "content"}}
+
+    <form action="/record_sighting" method="post" class="input-group form-text">
+        <div class="form-group">
+            <label for="alias">Name</label>
+            <input class="form-control" id="alias" name="alias" type="text" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <select class="form-control" id="age" name="age">
+                <option value="newborn">Newborn</option>
+                <option value="young">Young</option>
+                <option value="adult">Adult</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="power">Health</label>
+            <select class="form-control" id="health" name="health">
+                <option value="healthy">Healthy</option>
+                <option value="okay">Okay</option>
+                <option value="ill">Ill</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location of Sighting</label>
+            <input class="form-control" id="location" name="location" type="text" placeholder="Please enter a detailed description of where animal was sighted" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ranger">Ranger's Name</label>
+            <input class="form-control" id="ranger" name="ranger" type="text" required>
+        </div>
+
+        <br>
+        <br>
+        <button type="submit" class="btn btn-outline-secondary">Add Hero</button>
+    </form>
+{{/partial}}
+{{>layout.hbs}}
