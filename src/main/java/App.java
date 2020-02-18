@@ -17,6 +17,7 @@ public class App {
         String connectionString = "jdbc:postgresql://localhost:5432/tracker";
         Sql2o sql2o = new Sql2o(connectionString, "postgres", "pg");
         Sql2oSightingDao sightingDao = new Sql2oSightingDao(sql2o);
+        Map<String, Object> model = new HashMap<String, Object>();
 
         //instantiate some Animals to populate form
         Animal animal = new Animal("Endangered", "Dodo", "26", "healthy");
@@ -24,21 +25,18 @@ public class App {
         Animal animal3 = new Animal("Normal", "Chicken", "1", "healthy");
 
         get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Animal> animals = Animal.getAll();
             model.put("animals", animals);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/view_sightings", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
             List<Sighting> sightings = sightingDao.getAll();
             model.put("sightings", sightings);
             return new ModelAndView(model, "view-sightings.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/record_sighting/new", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Animal> animals = Animal.getAll();
             model.put("animals", animals);
             return new ModelAndView(model, "sighting-form.hbs");
@@ -57,12 +55,10 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         get("/record_animal/new", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "animal-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/record_animal", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
             String type = request.queryParams("type");
             String name = request.queryParams("name");
             String age = request.queryParams("age");
