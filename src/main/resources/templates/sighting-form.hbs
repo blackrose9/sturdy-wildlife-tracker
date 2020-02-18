@@ -1,7 +1,8 @@
 {{#partial "active"}}
     <ul class="nav nav-tabs">
         <li role="presentation"><a href="/">Home</a></li>
-        <li role="presentation" class="active"><a href="/record_sighting++-/new">Record Sighting</a></li>
+        <li role="presentation"><a href="/record_animal/new">New Animal</a></li>
+        <li role="presentation" class="active"><a href="/record_sighting/new">Record Sighting</a></li>
         <li role="presentation"><a href="/view_sightings">View Sightings</a></li>
     </ul>
 {{/partial}}
@@ -9,30 +10,23 @@
 {{#partial "content"}}
     <form action="/record_sighting" method="post" class="input-group form-text">
         <div class="form-group">
-            <label for="alias">Name</label>
-            <input class="form-control" id="alias" name="alias" type="text" required>
+            <label for="name">Name</label>
+            <input class="form-control" id="name" name="name" type="text" required>
         </div>
 
         <div class="form-group">
-            <label for="age">Age</label>
-            <select class="form-control" id="age" name="age">
-                <option value="newborn">Newborn</option>
-                <option value="young">Young</option>
-                <option value="adult">Adult</option>
+            <label for="aniname">Health</label>
+            <select class="form-control" id="aniname" name="aniname">
+                {{#if animals}}
+                    {{#each animals}}
+                        <option value="{{name}}">{{type}}-{{name}}</option>
+                    {{/each}}
+                {{/if}}
             </select>
         </div>
 
         <div class="form-group">
-            <label for="power">Health</label>
-            <select class="form-control" id="health" name="health">
-                <option value="healthy">Healthy</option>
-                <option value="okay">Okay</option>
-                <option value="ill">Ill</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="location">Location of Sighting</label>
+            <label for="location">Location</label>
             <input class="form-control" id="location" name="location" type="text" placeholder="Please enter a detailed description of where animal was sighted" required>
         </div>
 
@@ -43,7 +37,7 @@
 
         <br>
         <br>
-        <button type="submit" class="btn btn-outline-secondary">Add Hero</button>
+        <button type="submit" class="btn btn-outline-secondary">Add Sighting</button>
     </form>
 {{/partial}}
-{{>layout.hbs}}
+{{> layout.hbs}}

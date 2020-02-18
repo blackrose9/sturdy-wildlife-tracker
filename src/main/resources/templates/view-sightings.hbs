@@ -1,6 +1,7 @@
 {{#partial "active"}}
     <ul class="nav nav-tabs">
         <li role="presentation"><a href="/">Home</a></li>
+        <<li role="presentation"><a href="/record_animal/new">New Animal</a></li>
         <li role="presentation"><a href="/record_sighting/new">Record Sighting</a></li>
         <li role="presentation" class="active"><a href="/view_sightings">View Sightings</a></li>
     </ul>
@@ -11,9 +12,7 @@
             <div class="well">
                 Name: {{name}}
                 <br>
-                Age: {{age}}
-                <br>
-                Health: {{health}}
+                Location: {{location}}
                 <br>
                 Ranger: {{ranger}}
                 <hr>
@@ -24,4 +23,4 @@
     {{/if}}
 {{/partial}}
 
-{{>layout.hbs}}
+{{> layout.hbs}}

@@ -1,0 +1,48 @@
+{{#partial "active"}}
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="/">Home</a></li>
+        <li role="presentation" class="active"><a href="/record_animal/new">New Animal</a></li>
+        <li role="presentation"><a href="/record_sighting/new">Record Sighting</a></li>
+        <li role="presentation"><a href="/view_sightings">View Sightings</a></li>
+    </ul>
+{{/partial}}
+
+{{#partial "content"}}
+    <form action="/record_animal" method="post" class="input-group form-text">
+        <div class="form-group">
+            <label for="power">Type</label>
+            <select class="form-control" id="type" name="type">
+                <option value="normal">Normal</option>
+                <option value="endangered">Endangered</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" id="name" name="name" type="text" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <select class="form-control" id="age" name="age">
+                <option value="newborn">Newborn</option>
+                <option value="young">Young</option>
+                <option value="adult">Adult</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="health">Health</label>
+            <select class="form-control" id="health" name="health">
+                <option value="healthy">Healthy</option>
+                <option value="okay">Okay</option>
+                <option value="ill">Ill</option>
+            </select>
+        </div>
+
+        <br>
+        <br>
+        <button type="submit" class="btn btn-outline-secondary">Add Animal</button>
+    </form>
+{{/partial}}
+{{> layout.hbs}}
