@@ -28,9 +28,7 @@ public class Sighting {
         return Objects.hash(id, animalName, location, rangerName);
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public void setId(int id) {
         this.id = id;

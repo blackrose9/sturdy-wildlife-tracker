@@ -24,7 +24,7 @@ public class App {
         get("/view_sightings", (request, response) -> {
             List<Sighting> sightings = sightingDao.getAll();
             model.put("sightings", sightings);
-            return new ModelAndView(model, "view_sightings.hbs");
+            return new ModelAndView(model, "view-sightings.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/record_sighting/new", (request, response) -> {
@@ -44,5 +44,9 @@ public class App {
 
             return null;
         }, new HandlebarsTemplateEngine());
+
+//        post("/record_animal", (request, response) -> {
+//
+//        }, new HandlebarsTemplateEngine());
     }
 }
