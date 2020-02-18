@@ -6,4 +6,20 @@
         <li role="presentation"><a href="/view_sightings">View Sightings</a></li>
     </ul>
 {{/partial}}
+{{#partial "content"}}
+    {{#if animals}}
+        {{#each animals}}
+            <div class="well">
+                Name: {{name}}
+                <br>
+                Age: {{age}}
+                <br>
+                Health: {{health}}
+                <br>
+                Type: {{type}}
+                <hr>
+            </div>
+        {{/each}}
+    {{/if}}
+{{/partial}}
 {{>layout.hbs}}
