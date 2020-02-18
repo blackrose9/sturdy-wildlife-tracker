@@ -6,10 +6,10 @@ public class Sighting {
     private String location;
     private String rangerName;
 
-    public Sighting(String mAnimalName, String mLocation, String mRanger) {
-        this.animalName = mAnimalName;
-        this.location = mLocation;
-        this.rangerName = mRanger;
+    public Sighting(String name, String location, String ranger) {
+        this.animalName = name;
+        this.location = location;
+        this.rangerName = ranger;
     }
 
     @Override
