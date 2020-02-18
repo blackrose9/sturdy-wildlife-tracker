@@ -2,4 +2,9 @@ body{
     /*background-color: whitesmoke;*/
     background: url("/images/elephant.jpeg") no-repeat fixed center center;
     background-size: cover;
+
+    /*these cater for other browsers*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
