@@ -14,7 +14,7 @@ Online deployment not available yet
 4) In your browser > http://localhost:4567
 
 ### CodeBeat Grade
--coming soon-
+[![codebeat badge](https://codebeat.co/badges/be6b568a-3f56-463f-ae05-6cb8a21b3ada)](https://codebeat.co/projects/github-com-blackrose9-sturdy-wildlife-tracker-dev)
 
 ### Known Bugs
 * Database is not receiving or releasing information for unknown reasons.
