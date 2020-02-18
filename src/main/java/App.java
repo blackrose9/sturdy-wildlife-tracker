@@ -25,6 +25,8 @@ public class App {
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Animal> animals = Animal.getAll();
+            model.put("animals", animals);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 

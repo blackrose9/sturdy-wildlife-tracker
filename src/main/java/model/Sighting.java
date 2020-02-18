@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Objects;
 
 public class Sighting {
@@ -10,6 +12,7 @@ public class Sighting {
         this.animalName = name;
         this.location = location;
         this.rangerName = ranger;
+        this.id = id;
     }
 
     @Override
