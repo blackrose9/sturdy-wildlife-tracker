@@ -1,3 +1,11 @@
+{{#partial "active"}}
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="/">Home</a></li>
+        <li role="presentation" class="active"><a href="/record_sighting/new">Record Sighting</a></li>
+        <li role="presentation"><a href="/view_sightings">View Sightings</a></li>
+    </ul>
+{{/partial}}
+
 {{#partial "content"}}
     <form action="/record_sighting" method="post" class="input-group form-text">
         <div class="form-group">

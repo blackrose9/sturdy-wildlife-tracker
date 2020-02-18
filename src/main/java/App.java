@@ -18,8 +18,31 @@ public class App {
         Map<String, Object> model = new HashMap<String, Object>();
 
         get("/", (request, response) -> {
-            List<Sighting> sightings = sightingDao.getAll();
             return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/view_sightings", (request, response) -> {
+            List<Sighting> sightings = sightingDao.getAll();
+            model.put("sightings", sightings);
+            return new ModelAndView(model, "view_sightings.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/record_sighting/new", (request, response) -> {
+            return new ModelAndView(model, "sighting-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/record_sighting", (request, response) -> {
+            String name = request.queryParams("name");
+            String age = request.queryParams("age");
+            String health = request.queryParams("health");
+            String location = request.queryParams("location");
+            String ranger = request.queryParams("ranger");
+
+            Sighting sighting = new Sighting(name, location, ranger);
+            sightingDao.add(sighting);
+            response.redirect("/");
+
+            return null;
         }, new HandlebarsTemplateEngine());
     }
 }
