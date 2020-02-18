@@ -18,3 +18,6 @@ Online deployment not available yet
 
 ### Known Bugs
 * Database is not receiving or releasing information for unknown reasons.
+
+### Future Works
+* Add functionality that adds individual animals to database so a ranger can just select animals rather than repeatedly creating them
